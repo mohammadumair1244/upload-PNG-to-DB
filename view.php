@@ -25,9 +25,14 @@ if ($conn->connect_error) {
 
         while($data=mysqli_fetch_assoc($result)){ 
          ?> 
-            <img style='margin: 5px;width: 350px;height: 250px;' src="./upload/<?php echo $data['name']; ?>">
+         <div style="border:1px solid grey;padding:15px;width :370px;display:inline-block;margin :0" class="justify-content-center mx-auto" >
+            <img style='width: 350px;height: 250px;' src="./upload/<?php echo $data['name']; ?>"><br>
+            <a style="padding:10px 0px;display:block;margin :0;text-align: center" href="./upload/<?php echo $data['name']; ?>" Download><button class="btn btn-primary mx-auto">Download</button></a> 
+        </div>
+
 <?php
         }
+      
 
 ?>
            

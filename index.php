@@ -6,10 +6,11 @@ if (isset($_POST['upload'])) {
     $tempname = $_FILES["uploadFile"]["tmp_name"];
     $target_dir = "upload/";
     $target_file = $target_dir . basename($_FILES["uploadFile"]["name"]);
-    $allowed_types = array('jpg', 'jpeg');
+    $allowed_types = array('png');
+    $ext = pathinfo($name, PATHINFO_EXTENSION);
 
 
-    if (in_array($file_ext, $allowed_types)) {
+    if (in_array($ext, $allowed_types)) {
 
             echo "Allowed";
             if (move_uploaded_file($tempname, $target_file)) {
